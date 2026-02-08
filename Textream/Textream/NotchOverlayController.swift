@@ -91,6 +91,7 @@ class NotchOverlayController {
         panel.level = .screenSaver
         panel.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary, .stationary]
         panel.ignoresMouseEvents = false
+        panel.sharingType = .none
         panel.contentView = contentView
 
         panel.orderFrontRegardless()
