@@ -36,3 +36,15 @@ jobs:
           draft: false
           prerelease: false
           generate_release_notes: true
+          body: |
+            ## Installation
+
+            1. Download **Textream.dmg** below
+            2. Open the DMG and drag **Textream** to Applications
+            3. Since the app is not notarized, macOS may block it on first launch. Run the following command in Terminal to fix this:
+
+            ```
+            xattr -cr /Applications/Textream.app
+            ```
+
+            Then open Textream normally.
