@@ -169,6 +169,12 @@ class OverlayWindow(QMainWindow):
             act = QAction(label, self)
             act.triggered.connect(func)
             pos_menu.addAction(act)
+        
+        menu.addSeparator()
+
+        mic_action = QAction(t["mic_on"] if self.prompter.is_mic_on else t["mic_off"], self)
+        mic_action.triggered.connect(self.prompter._toggle_mic)
+        menu.addAction(mic_action)
 
         menu.addSeparator()
 

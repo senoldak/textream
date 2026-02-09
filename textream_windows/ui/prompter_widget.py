@@ -79,6 +79,7 @@ class PrompterWidget(QWidget):
     speed_changed = pyqtSignal(int)      # Emits speed level (0-5)
     auto_advance_requested = pyqtSignal() # Emitted when timer ticks
     language_changed = pyqtSignal(str)   # Language switch
+    mic_toggled = pyqtSignal(bool)       # Emits True if mic is ON (active)
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -138,9 +139,16 @@ class PrompterWidget(QWidget):
         self.btn_forward.setStyleSheet(btn_style)
         self.btn_forward.clicked.connect(self.forward_requested.emit)
 
+        self.btn_mic = QPushButton("🎤")
+        self.btn_mic.setFixedSize(24, 24)
+        self.btn_mic.setStyleSheet(btn_style)
+        self.is_mic_on = True
+        self.btn_mic.clicked.connect(self._toggle_mic)
+
         self.controls_layout.addStretch()
         self.controls_layout.addWidget(self.btn_rewind)
         self.controls_layout.addWidget(self.btn_play_pause)
+        self.controls_layout.addWidget(self.btn_mic)
         self.controls_layout.addWidget(self.btn_speed)
         self.controls_layout.addWidget(self.btn_forward)
         self.controls_layout.addStretch()
@@ -179,6 +187,11 @@ class PrompterWidget(QWidget):
         self.is_paused = not self.is_paused
         self.btn_play_pause.setText("▶" if self.is_paused else "⏸")
         self.pause_requested.emit(self.is_paused)
+
+    def _toggle_mic(self):
+        self.is_mic_on = not self.is_mic_on
+        self.btn_mic.setText("🎤" if self.is_mic_on else "🔇")
+        self.mic_toggled.emit(self.is_mic_on)
 
     def set_text(self, text):
         self.full_text = text
@@ -227,6 +240,7 @@ class PrompterWidget(QWidget):
         # Apply updated style to all buttons
         self.btn_rewind.setStyleSheet(btn_style)
         self.btn_play_pause.setStyleSheet(btn_style)
+        self.btn_mic.setStyleSheet(btn_style)
         self.btn_forward.setStyleSheet(btn_style)
         self.btn_speed.setStyleSheet(btn_style + "font-weight: bold; font-size: 9px;")
 

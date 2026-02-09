@@ -136,6 +136,10 @@ def main():
             audio.resume()
             print("Audio processing RESUMED")
 
+    def on_mic_toggled(is_on):
+        audio.set_mic_enabled(is_on)
+        print(f"Microphone {'ENABLED' if is_on else 'DISABLED'}")
+
     def on_rewind_requested():
         # Jump back by one word
         new_pos = matcher.get_prev_word_offset()
@@ -209,6 +213,7 @@ def main():
     main_window.start_requested.connect(on_start_requested_wrapper)
 
     overlay_window.prompter.pause_requested.connect(on_pause_requested)
+    overlay_window.prompter.mic_toggled.connect(on_mic_toggled)
     overlay_window.prompter.rewind_requested.connect(on_rewind_requested)
     overlay_window.prompter.forward_requested.connect(on_forward_requested)
     overlay_window.prompter.auto_advance_requested.connect(on_auto_advance)

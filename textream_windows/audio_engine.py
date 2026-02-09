@@ -13,6 +13,7 @@ class AudioEngine:
         self.p = pyaudio.PyAudio()
         self.is_running = False
         self.is_paused = False
+        self.is_mic_active = True
         self.on_result = None          # Callback(text, is_final)
         self.on_audio_level = None     # Callback(level_float_0_to_1)
         self.thread = None
@@ -67,6 +68,9 @@ class AudioEngine:
     def resume(self):
         self.is_paused = False
 
+    def set_mic_enabled(self, enabled):
+        self.is_mic_active = enabled
+
     def stop(self):
         self.is_running = False
         if self.thread:
@@ -95,10 +99,10 @@ class AudioEngine:
                 level = min(1.0, (rms / 2000)) 
                 
                 if self.on_audio_level:
-                    self.on_audio_level(level if not self.is_paused else 0)
+                    self.on_audio_level(level if (not self.is_paused and self.is_mic_active) else 0)
 
-                # 2. Feed to Vosk only if not paused
-                if self.is_paused:
+                # 2. Feed to Vosk only if not paused and mic is active
+                if self.is_paused or not self.is_mic_active:
                     continue
 
                 if self.recognizer.AcceptWaveform(data):

@@ -39,7 +39,10 @@ TRANSLATIONS = {
         "ctx_bottom": "Alta Hizala",
         "ctx_center": "Merkeze Hizala",
         "ctx_quit": "❌ Çıkış",
-        "ctx_lines_suffix": " Satır"
+        "ctx_lines_suffix": " Satır",
+        "mic_on": "🎤 Mic: AÇIK",
+        "mic_off": "🔇 Mic: KAPALI",
+        "ctx_mic": "🎤 Mikrofon"
     },
     "en": {
         "title": "Textream - Modern Teleprompter",
@@ -81,7 +84,10 @@ TRANSLATIONS = {
         "ctx_bottom": "Align Bottom",
         "ctx_center": "Align Center",
         "ctx_quit": "❌ Quit",
-        "ctx_lines_suffix": " Lines"
+        "ctx_lines_suffix": " Lines",
+        "mic_on": "🎤 Mic: ON",
+        "mic_off": "🔇 Mic: OFF",
+        "ctx_mic": "🎤 Microphone"
     },
     "es": {
         "title": "Textream - Teleprompter Moderno",
@@ -123,7 +129,10 @@ TRANSLATIONS = {
         "ctx_bottom": "Alinear Abajo",
         "ctx_center": "Centrar",
         "ctx_quit": "❌ Salir",
-        "ctx_lines_suffix": " Líneas"
+        "ctx_lines_suffix": " Líneas",
+        "mic_on": "🎤 Mic: ENCENDIDO",
+        "mic_off": "🔇 Mic: APAGADO",
+        "ctx_mic": "🎤 Micrófono"
     },
     "fr": {
         "title": "Textream - Téléprompteur Moderne",
@@ -165,7 +174,10 @@ TRANSLATIONS = {
         "ctx_bottom": "Aligner en Bas",
         "ctx_center": "Centrer",
         "ctx_quit": "❌ Quitter",
-        "ctx_lines_suffix": " Lignes"
+        "ctx_lines_suffix": " Lignes",
+        "mic_on": "🎤 Mic : ON",
+        "mic_off": "🔇 Mic : OFF",
+        "ctx_mic": "🎤 Microphone"
     },
     "de": {
         "title": "Textream - Moderner Teleprompter",
@@ -207,7 +219,10 @@ TRANSLATIONS = {
         "ctx_bottom": "Unten",
         "ctx_center": "Mitte",
         "ctx_quit": "❌ Beenden",
-        "ctx_lines_suffix": " Zeilen"
+        "ctx_lines_suffix": " Zeilen",
+        "mic_on": "🎤 Mic: AN",
+        "mic_off": "🔇 Mic: AUS",
+        "ctx_mic": "🎤 Mikrofon"
     },
     "cn": {
         "title": "Textream - 现代提词器",
@@ -249,6 +264,9 @@ TRANSLATIONS = {
         "ctx_bottom": "底部对齐",
         "ctx_center": "居中",
         "ctx_quit": "❌ 退出",
-        "ctx_lines_suffix": " 行"
+        "ctx_lines_suffix": " 行",
+        "mic_on": "🎤 麦克风: 开启",
+        "mic_off": "🔇 麦克风: 关闭",
+        "ctx_mic": "🎤 麦克风"
     }
 }
