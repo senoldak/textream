@@ -31,3 +31,11 @@ Pods/
 *~
 *.orig
 *.log
+
+# Python / Windows
+__pycache__/
+*.pyc
+.venv/
+.env
+textream_windows/model/
+textream_windows/models/
