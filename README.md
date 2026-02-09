@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <a href="#windows-setup">Windows Setup</a> · <a href="#mac-download">macOS Download</a> · <a href="#features">Features</a> · <a href="#how-it-works">How It Works</a>
+  <a href="#windows-setup">Windows Setup</a> · <a href="#macos-download">macOS Download</a> · <a href="#features">Features</a> · <a href="#how-it-works">How It Works</a>
 </p>
 
 <p align="center">
