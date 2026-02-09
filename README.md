@@ -43,6 +43,14 @@ python textream_windows/main.py
 
 > **Note:** On first launch, the app will automatically download the necessary language models for offline recognition.
 
+### 🎮 Windows Controls & Shortcuts
+Once the overlay is active, you can use the floating controls or **Right-Click** for settings:
+- 🎤/🔇 **Microphone Toggle:** Quickly enable or disable voice recognition.
+- ⏪/⏩ **Word Jump:** Skip forward or go back by one word.
+- ⏸/▶️ **Play/Pause:** Pause the tracker and resume when ready.
+- 🏎️ **Auto-Advance:** Set a speed (1x to 5x) to move text automatically if you prefer a steady pace.
+- 🖱️ **Drag & Move:** Click and drag anywhere on the overlay to reposition it.
+
 ---
 
 ## 🍎 macOS Download
@@ -67,26 +75,28 @@ Then **Right-Click → Open**.
 ## ✨ Features
 
 - **Real-time voice tracking** — High-performance offline speech recognition highlights words as you say them. No cloud, works everywhere.
-- **Dynamic Overlay** — A sleek, floating overlay that sits above all apps. Visible only to you, invisible to your audience.
-- **Live Waveform** — Visual voice activity indicator with multiple styles (Bars, Dots, Wave, etc.).
-- **Smart Customization** — Change themes (Dark/Light), fonts, colors, and the number of visible lines instantly.
+- **Dynamic Overlay** — A sleek, floating overlay that sits above all apps. Visible only to you, invisible to your audience (perfect for OBS/Zoom).
+- **Live Waveform** — Visual voice activity indicator with multiple styles (**Bars, Dots, Wave, Solid, Mirror, Outline**).
+- **Control Center** — Built-in buttons for Mic toggle, Rewind/Forward, and variable Auto-Advance speeds.
+- **Rich Customization** — Change themes (Dark/Light), fonts, colors, and line counts (1 to 5) instantly via the **Right-Click** menu.
 - **Multi-language Support** — Recognition support for Turkish, English, Spanish, French, German, and Chinese.
-- **Privacy First** — All processing happens locally. Your voice never leaves your machine.
+- **Privacy First** — All processing happens locally using Vosk. Your voice never leaves your machine.
 
 ## 🚀 How It Works
 
 1. **Paste your script** — Drop your text into the editor. Use the 📋 **Paste** shortcut for speed.
 2. **Hit Start** — The teleprompter overlay appears at the top of your screen.
-3. **Start speaking** — Words highlight in real-time. When you finish, the overlay closes automatically.
+3. **Start speaking** — Words highlight in real-time. When you finish, the overlay stays until you close it, or you can jump around the text manually.
+4. **Tune on the fly** — Right-click the overlay anytime to switch languages, themes, or font sizes without stopping.
 
 ---
 
 ## 🛠️ Developer Information
 
 ### Windows (Python)
-- **UI:** PyQt6
-- **Engine:** Vosk API
-- **Matcher:** Fuzzy String Matching (Levenshtein)
+- **UI:** PyQt6 (Hardware accelerated)
+- **Engine:** Vosk API (Offline Kaldi-based recognition)
+- **Matcher:** Fuzzy String Matching with anchor-based tracking.
 
 ### macOS (Swift)
 - **UI:** SwiftUI
